@@ -9,6 +9,10 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    String formattedId = pokemon.id.toString().padLeft(3, '0');
+
+    return Scaffold(
+      
+    );
   }
 }
