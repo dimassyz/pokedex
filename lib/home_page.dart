@@ -56,12 +56,12 @@ class HomePage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Pokedex",
+          "Pokédex",
           style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 10),
         Text(
-          "Search for any pokemon you want",
+          "Search for a Pokémon by name or using its National Pokédex number.",
           style: TextStyle(color: Colors.grey[700], fontSize: 20),
         ),
       ],
@@ -75,7 +75,7 @@ class HomePage extends StatelessWidget {
           child: TextFormField(
             controller: searchName,
             decoration: InputDecoration(
-              hintText: "Search Pokemon",
+              hintText: "Name or number",
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(color: Colors.grey),
