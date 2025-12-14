@@ -4,15 +4,18 @@ class CardPokemonWidget extends StatelessWidget {
   final int id;
   final String imageUrl;
   final String name;
-  final String? type;
+  final String type;
   final VoidCallback? onTap;
+  final bool showInfo;
+
   const CardPokemonWidget({
     super.key,
     required this.id,
     required this.imageUrl,
     required this.name,
-    this.type,
+    required this.type,
     this.onTap,
+    this.showInfo = true,
   });
   @override
   Widget build(BuildContext context) {
@@ -35,14 +38,23 @@ class CardPokemonWidget extends StatelessWidget {
           children: [
             SizedBox(height: 10,),
             Image.network(imageUrl, width: double.infinity, fit: BoxFit.fill),
-            SizedBox(height: 10),
-            Text(
-              name,
-              style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 5),
-            Text(formattedId, style: TextStyle(fontSize: 10, color: Colors.grey[700])),
-          ],
+
+             if (showInfo) ...[
+              SizedBox(height: 10),
+              Text(
+                name,
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 5),
+              Text(
+                formattedId,
+                style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+              ),
+              SizedBox(height: 10),
+            ],
+
+            if (!showInfo) SizedBox(height: 20),
+            ],
         ),
       ),
     );
