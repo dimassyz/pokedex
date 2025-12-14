@@ -42,7 +42,37 @@ class DetailPage extends StatelessWidget {
       )
       ),
       
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: Column(
+          children: [
+            Expanded(
+              flex: 5,
+              child: CardPokemonWidget(
+                id: pokemon.id, 
+                imageUrl: pokemon.imageUrl, 
+                name: pokemon.name, 
+                type: pokemon.type,
+                onTap: null,
+                showInfo: false,
+                ),
+            ),
+            Expanded(
+              flex: 4,
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.only(top: 30),
+                child: Column(
+                  children: [
+                    Text("Fitur lainnya coming soon")
+                  ],
+                ),
+              )
+              )
+          ],
+        ),
       
+      ),
       
     );
   }
