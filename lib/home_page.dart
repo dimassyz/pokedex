@@ -32,17 +32,18 @@ class HomePage extends StatelessWidget {
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
-          mainAxisSpacing: 8,
-          childAspectRatio: 3 / 4,
+          mainAxisSpacing: 10,
+          childAspectRatio: 0.7,
         ),
         itemCount: dummyPokemonList.length,
         itemBuilder: (context, index) {
           return CardPokemonWidget(
             onTap: () {
               print('Tapped on ${dummyPokemonList[index].name}');
-            },
+            }, 
             imageUrl: dummyPokemonList[index].imageUrl,
             name: dummyPokemonList[index].name,
+            id: dummyPokemonList[index].id,
             type: dummyPokemonList[index].type,
           );
         },
