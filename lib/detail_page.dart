@@ -12,7 +12,15 @@ class DetailPage extends StatelessWidget {
     String formattedId = pokemon.id.toString().padLeft(3, '0');
 
     return Scaffold(
-      
+      backgroundColor: Colors.white, // Background putih bersih
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
     );
   }
 }
