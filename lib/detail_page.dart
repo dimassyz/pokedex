@@ -20,7 +20,30 @@ class DetailPage extends StatelessWidget {
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
+        centerTitle: true,
+        title: Column(
+        children: [
+          Text(
+            pokemon.name,
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 22
+            ),
+          ),
+          Text(
+            formattedId,
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 16
+            ),
+          )
+        ],
+      )
       ),
+      
+      
+      
     );
   }
 }
